@@ -2,6 +2,7 @@
 
 Zill is an app allowing companys to quickly sign invoices
 
+You will soon Zill your invoices
 
 ## Licences
 
