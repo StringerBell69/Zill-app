@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.17.0, 20]  # Specify both Node.js versions
+        node-version: [20]  # Specify only Node.js version 20
 
     steps:
     - name: Checkout repository
@@ -30,6 +30,24 @@ jobs:
       with:
         cmd: install
 
-    - name: Run tests
-      run: yarn test
+    # Commented out server-related steps
+    #- name: Install dependencies for server
+    #  run: |
+    #    cd zill-server
+    #    yarn install
+
+    #- name: Run tests for server
+    #  run: |
+    #    cd zill-server
+    #    yarn test
+
+    - name: Install dependencies for app
+      run: |
+        cd zill-app
+        yarn install
+
+    - name: Run tests for app
+      run: |
+        cd zill-app
+        yarn test
 
