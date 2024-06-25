@@ -12,10 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20]  # Specify only Node.js version 20
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4  # Ensure this is using v4
@@ -23,24 +19,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3  # Ensure this is using v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '20'  # Specify Node.js version 20 explicitly
 
     - name: GitHub Action for Yarn
       uses: Borales/actions-yarn@v5.0.0
       with:
         cmd: install
 
-    # Commented out server-related steps
-    #- name: Install dependencies for server
-    #  run: |
-    #    cd zill-server
-    #    yarn install
-
-    #- name: Run tests for server
-    #  run: |
-    #    cd zill-server
-    #    yarn test
-
+    # Add steps here for installing dependencies and running tests
     - name: Install dependencies for app
       run: |
         cd zill-app
