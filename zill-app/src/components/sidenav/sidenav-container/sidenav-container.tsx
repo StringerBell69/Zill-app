@@ -16,12 +16,12 @@ export function SidenavContainer({ children, sidenav }: SidenavContainerProps) {
           w={{ base: 0, md: "72px" }}
           borderRight="1px solid"
           borderColor="gray.100"
-          p={{ base: 0, md: 2 }}
+          p={{ base: 0, md: 45 }}
           paddingTop={8}
           height="100vh"
           overflow="auto"
           css={{
-            "&::-webkit-scrollbar": {
+            "&::-webkit-scrollbar": { 
               height: "var(--chakra-sizes-1)",
               width: "var(--chakra-sizes-1)"
             },
